@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-monitor:
-    runs-runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: コードの取得
         uses: actions/checkout@v3
