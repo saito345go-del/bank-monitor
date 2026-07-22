@@ -88,7 +88,7 @@ def check_dip_buying():
             )
             signals.append(detail)
 
-    if signals:
+if signals:
         subject = f"【売買指示】銀行株の押し目通知 ({now_str})"
         body = (
             f"監視中の銀行株で押し目買い条件を満たした銘柄があります。\n\n"
@@ -97,6 +97,8 @@ def check_dip_buying():
         send_email(subject, body)
     else:
         print("条件を満たす押し目銘柄はありませんでした。")
+        # ▼ここを追加！条件を満たしてなくても確認メールを飛ばす
+        send_email("【テスト】監視プログラム動作確認", "ちゃんと動いてるで！今日は押し目買いのチャンスは無かったわ！")
 
 
 if __name__ == "__main__":
